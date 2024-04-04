@@ -89,35 +89,6 @@ class CupertinoImageCropperAppBar extends StatelessWidget
           child: Stack(
             children: [
               _buildAppBarButtons(context),
-              Center(
-                child: ValueListenableBuilder(
-                  valueListenable: controller.canResetNotifier,
-                  builder: (context, canReset, child) => AnimatedOpacity(
-                    curve: Curves.easeInOut,
-                    duration: const Duration(milliseconds: 100),
-                    opacity: canReset ? 1.0 : 0.0,
-                    child: IgnorePointer(
-                      ignoring: !canReset,
-                      child: child,
-                    ),
-                  ),
-                  child: CupertinoButton(
-                    onPressed: controller.reset,
-                    minSize: 44.0,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                      vertical: 10.0,
-                    ),
-                    child: Text(
-                      l10n.cupertinoResetLabel,
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .navActionTextStyle
-                          .copyWith(fontSize: 14.0),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),

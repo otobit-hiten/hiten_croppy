@@ -32,9 +32,7 @@ class CupertinoImageAspectRatioToolbar extends StatelessWidget {
       return l10n.cupertinoOriginalAspectRatioLabel;
     }
 
-    if (aspectRatio.isSquare) {
-      return l10n.cupertinoSquareAspectRatioLabel;
-    }
+
 
     return l10n.getAspectRatioLabel(width, height);
   }
@@ -129,10 +127,6 @@ class CupertinoImageAspectRatioToolbar extends StatelessWidget {
       valueListenable: controller.aspectRatioNotifier,
       builder: (context, _, __) => Column(
         children: [
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: _buildOrientationWidgets(context),
-          ),
           const SizedBox(height: 16.0),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,

@@ -91,32 +91,6 @@ class MaterialImageCropperToolbar extends StatelessWidget {
                   ),
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: ValueListenableBuilder(
-                  valueListenable: controller.canResetNotifier,
-                  builder: (context, canReset, child) => AnimatedOpacity(
-                    opacity: canReset ? 1.0 : 0.0,
-                    duration: const Duration(milliseconds: 200),
-                    curve: Curves.easeInOut,
-                    child: IgnorePointer(
-                      ignoring: !canReset,
-                      child: child,
-                    ),
-                  ),
-                  child: ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minWidth: 72.0,
-                      minHeight: 48.0,
-                      maxHeight: 48.0,
-                    ),
-                    child: TextButton(
-                      onPressed: () => controller.reset(),
-                      child: Text(l10n.materialResetLabel),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
           const SizedBox(height: 8.0),

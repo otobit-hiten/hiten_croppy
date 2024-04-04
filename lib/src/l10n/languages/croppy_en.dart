@@ -16,7 +16,7 @@ class CroppyLocalizationsEn extends CroppyLocalizations {
   String get cupertinoResetLabel => 'RESET';
 
   @override
-  String get cupertinoSquareAspectRatioLabel => 'SQUARE';
+  String get cupertinoSquareAspectRatioLabel => '1:1';
 
   @override
   String get doneLabel => 'Done';
