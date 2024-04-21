@@ -55,8 +55,8 @@ class CupertinoImageCropperBottomAppBar extends StatelessWidget
               l10n.doneLabel,
               style: TextStyle(
                 color: onTap != null
-                    ? primaryColor
-                    : primaryColor.withOpacity(0.5),
+                    ? Color(0xffffffff)
+                    : Color(0xffffffff),
               ),
             ),
           ),
