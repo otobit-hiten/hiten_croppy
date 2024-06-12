@@ -215,8 +215,13 @@ List<CropAspectRatio?> _createDefaultAspectRatios(Size imageSize) {
 }
 
 const _basicAspectRatios = [
-  CropAspectRatio(width: 3, height: 4),
   CropAspectRatio(width: 1, height: 1),
-  CropAspectRatio(width: 3, height: 2),
+  CropAspectRatio(width: 5, height: 4),
   CropAspectRatio(width: 4, height: 5),
+  CropAspectRatio(width: 4, height: 3),
+  CropAspectRatio(width: 3, height: 4),
+  CropAspectRatio(width: 3, height: 2),
+  CropAspectRatio(width: 2, height: 3),
+  CropAspectRatio(width: 16, height: 9),
+  CropAspectRatio(width: 9, height: 16),
 ];

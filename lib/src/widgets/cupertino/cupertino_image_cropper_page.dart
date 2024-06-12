@@ -60,6 +60,39 @@ class CupertinoImageCropperPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (controller is CupertinoCroppableImageController &&
+                      (controller as CupertinoCroppableImageController)
+                              .allowedAspectRatios
+                              .length >
+                          1)
+                    ValueListenableBuilder(
+                      valueListenable:
+                          (controller as CupertinoCroppableImageController)
+                              .toolbarNotifier,
+                      builder: (context, toolbar, _) => CupertinoButton(
+                        onPressed: () {
+                          // ignore: no_leading_underscores_for_local_identifiers
+                          final _controller =
+                              controller as CupertinoCroppableImageController;
+
+                          _controller.toggleToolbar(
+                            CupertinoCroppableImageToolbar.aspectRatio,
+                          );
+                        },
+                        minSize: 44.0,
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0,
+                          vertical: 10.0,
+                        ),
+                        child: Text("Crop",
+                            style: TextStyle(
+                              color: toolbar ==
+                                      CupertinoCroppableImageToolbar.aspectRatio
+                                  ? CupertinoColors.white
+                                  : CupertinoColors.systemGrey2,
+                            )),
+                      ),
+                    ),
                   RepaintBoundary(
                     child: AnimatedBuilder(
                       animation: overlayOpacityAnimation,
